@@ -6,7 +6,10 @@ import { useState } from 'react'
 
 const Navbar = () => {
   const [showModal, setShowModal] = useState(false)
-
+  const logOut = () => {
+    window.localStorage.clear();
+    window.location.href = "./login";
+  };
   return (
     <div className={classes.container}>
       <div className={classes.wrapper}>
@@ -26,7 +29,7 @@ const Navbar = () => {
           {showModal &&
             <div className={classes.modal}>
               <Link to='/create'>Create</Link>
-              <span>Logout</span>
+              <button onClick={logOut}>Logout</button>
             </div>
           }
         </div>
