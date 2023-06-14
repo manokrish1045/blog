@@ -7,7 +7,7 @@ import { useEffect } from 'react'
 import { request } from '../../utils/fetchApi'
 import Footer from '../../components/footer/Footer'
 import Navbar from '../../components/navbar/Navbar'
-import { format } from 'timeago.js'
+// import { format } from 'timeago.js'
 import { AiFillEdit, AiFillLike, AiFillDelete, AiOutlineArrowRight, AiOutlineLike } from 'react-icons/ai'
 
 const BlogDetails = () => {
@@ -60,7 +60,7 @@ const BlogDetails = () => {
           Go Back <AiOutlineArrowRight />
         </Link>
         <div className={classes.wrapper}>
-          <img src={`https://blog-back-haq9.onrender.com/images/${blogDetails?.photo}`} />
+          <img alt="ima" src={`https://blog-back-haq9.onrender.com/images/${blogDetails?.photo}`} />
           <div className={classes.titleAndControls}>
             <h3 className={classes.title}>{blogDetails?.title}</h3>
             {blogDetails?.userId?._id === user._id ?
@@ -98,7 +98,7 @@ const BlogDetails = () => {
           </div>
           <div className={classes.authorAndCreatedAt}>
             <span><span>Author:</span> {blogDetails?.userId?.username}</span>
-            <span><span>Created At:</span> {format(blogDetails?.createdAt)}</span>
+            <span><span>Created At:</span> {(blogDetails?.createdAt)}</span>
           </div>
         </div>
       </div>

@@ -2,7 +2,7 @@ import React from 'react'
 import { useEffect } from 'react'
 import { useState } from 'react'
 import { request } from '../../utils/fetchApi'
-import { format } from 'timeago.js'
+// import { format } from 'timeago.js'
 import { Link } from 'react-router-dom'
 import classes from './categories.module.css'
 import { MdOutlinePreview } from 'react-icons/md'
@@ -71,7 +71,7 @@ const Categories = () => {
               {filteredBlogs?.map((blog) => (
                 <div key={blog._id} className={classes.blog}>
                   <Link to={`/blogDetails/${blog?._id}`}>
-                    <img src={`https://blog-back-haq9.onrender.com/images/${blog?.photo}`} />
+                    <img alt="alter" src={`https://blog-back-haq9.onrender.com/images/${blog?.photo}`} />
                   </Link>
                   <div className={classes.blogData}>
                     <div className={classes.categoryAndMetadata}>
@@ -89,7 +89,7 @@ const Categories = () => {
                     </p>
                     <div className={classes.authorAndCreatedAt}>
                       <span><span>Author:</span> {blog?.userId?.username}</span>
-                      <span><span>Created:</span> {format(blog?.createdAt)}</span>
+                      <span><span>Created:</span> {(blog?.createdAt)}</span>
                     </div>
                     <Link to={`/blogDetails/${blog._id}`} className={classes.readMore}>
                       Read More <FiArrowRight />

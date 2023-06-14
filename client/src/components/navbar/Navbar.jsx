@@ -22,7 +22,7 @@ const Navbar = () => {
           {/* <li className={classes.listItem}>Categories</li> */}
         </ul>
         <div className={classes.right}>
-          <img onClick={() => setShowModal(prev => !prev)} src={womanImg} className={classes.img} />
+          <img onClick={() => setShowModal(prev => !prev)} src={womanImg} className={classes.img} alt='image1' />
           {showModal &&
             <div className={classes.modal}>
               <Link to='/create'>Create</Link>
